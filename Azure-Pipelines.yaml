@@ -1,1 +1,18 @@
+trigger:
+    -main
 
+Pool:
+  vmImages: 'Ubuntu-latest'
+
+Stages:
+  - stage: build
+  displayname: Build and Print
+  jobs:
+  - jobs: PrintHello
+   displayname: Print Hello World
+   steps:
+   - checkout: self
+   -script: 
+        chmod +* ./helloworld.sh
+        ./helloworld.sh
+        displayname: 'Run Print_helloworld.sh'
