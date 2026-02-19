@@ -1,8 +1,8 @@
 trigger:
     -main
 
-Pool:
-  vmImages: 'Ubuntu-latest'
+pool:
+  name: MySelfHostedPool
 
 Stages:
   - stage: build
