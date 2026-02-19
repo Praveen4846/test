@@ -1,18 +1,19 @@
 trigger:
-    -main
+  - main
 
 pool:
   name: MySelfHostedPool
 
 stages:
-  - stage: build
-  displayname: Build and Print
+- stage: Build
+  displayName: Build and Print
   jobs:
-  - job:: PrintHello
-   displayName: Print Hello World
-   steps:
-   - checkout: self
-   -script: 
+  - job: PrintHello
+    displayName: Print Hello World
+    steps:
+    - checkout: self
+
+    - script: |
         chmod +x ./helloworld.sh
         ./helloworld.sh
-        displayname: 'Run Print_helloworld.sh'
+      displayName: 'Run Print_helloworld.sh'
